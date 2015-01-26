@@ -106,7 +106,10 @@
 					left: dim.e.rect.left - (dim.s.rect.left + dim.s.border.left),
 					right: dim.s.rect.right - dim.s.border.right - dim.s.scrollbar.right - dim.e.rect.right
 				};
-
+				
+				if ( options.yOffset !== null && options.yOffset !== undefined )
+     rel.bottom = rel.bottom + options.yOffset
+    
 				var animOptions = {};
 
 				// vertical scroll
@@ -134,7 +137,6 @@
 						animOptions.scrollLeft = dim.s.scroll.left + Math.min(rel.left, -rel.right);
 					}
 				}
-
 				// scroll if needed
 				if (!$.isEmptyObject(animOptions))
 				{
